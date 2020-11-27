@@ -1,0 +1,43 @@
+﻿CREATE TABLE Product (
+    id          INTEGER      PRIMARY KEY AUTOINCREMENT
+                             NOT NULL,
+    name        VARCHAR (50) NOT NULL,
+    price_main  DECIMAL      NOT NULL,
+    price_real  DECIMAL      NOT NULL,
+    id_category INT          NOT NULL
+                             REFERENCES Category (id) ON DELETE CASCADE
+                                                      ON UPDATE CASCADE,
+    id_currency INT          NOT NULL
+                             REFERENCES Currency (id),
+    code        VARCHAR (10) 
+);
+
+CREATE TABLE Storage (
+    id      INTEGER       PRIMARY KEY AUTOINCREMENT
+                          NOT NULL,
+    name    VARCHAR (50)  NOT NULL,
+    address VARCHAR (200) NOT NULL
+);
+
+CREATE TABLE Category (
+    id   INTEGER      PRIMARY KEY AUTOINCREMENT
+                      NOT NULL,
+    Name VARCHAR (50) NOT NULL
+);
+
+
+CREATE TABLE Currency (
+    id       INTEGER      PRIMARY KEY AUTOINCREMENT
+                          NOT NULL,
+    name     VARCHAR (50) NOT NULL,
+    code     VARCHAR (10) NOT NULL,
+    rate     DECIMAL      NOT NULL,
+    [update] DATE         NOT NULL
+);
+
+CREATE TABLE Inter_Product_Storage (
+    id_product INT NOT NULL
+                   REFERENCES Product (id) ON DELETE CASCADE,
+    id_storage INT NOT NULL
+                   REFERENCES Storage (id) ON DELETE CASCADE
+);
