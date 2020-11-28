@@ -29,26 +29,33 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.ProductButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.TextBoxFind = new System.Windows.Forms.TextBox();
-            this.ButtonFind = new System.Windows.Forms.Button();
-            this.AnswerBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ProductButton = new System.Windows.Forms.Button();
+            this.CategoryButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.InfoLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.DimGray;
+            this.MainPanel.Controls.Add(this.comboBox1);
+            this.MainPanel.Controls.Add(this.dataGridView1);
+            this.MainPanel.Controls.Add(this.InfoLabel);
+            this.MainPanel.Controls.Add(this.DateLabel);
+            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.CategoryButton);
             this.MainPanel.Controls.Add(this.ProductButton);
             this.MainPanel.Controls.Add(this.button1);
-            this.MainPanel.Controls.Add(this.TextBoxFind);
-            this.MainPanel.Controls.Add(this.ButtonFind);
-            this.MainPanel.Controls.Add(this.AnswerBox);
             this.MainPanel.Controls.Add(this.panel2);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
@@ -57,6 +64,16 @@
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
+            // 
+            // ProductButton
+            // 
+            this.ProductButton.Location = new System.Drawing.Point(458, 99);
+            this.ProductButton.Name = "ProductButton";
+            this.ProductButton.Size = new System.Drawing.Size(75, 23);
+            this.ProductButton.TabIndex = 5;
+            this.ProductButton.Text = "Product";
+            this.ProductButton.UseVisualStyleBackColor = true;
+            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // button1
             // 
@@ -67,38 +84,6 @@
             this.button1.Text = "Storage";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // TextBoxFind
-            // 
-            this.TextBoxFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxFind.Location = new System.Drawing.Point(12, 71);
-            this.TextBoxFind.Name = "TextBoxFind";
-            this.TextBoxFind.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxFind.TabIndex = 3;
-            // 
-            // ButtonFind
-            // 
-            this.ButtonFind.BackColor = System.Drawing.Color.DarkGray;
-            this.ButtonFind.FlatAppearance.BorderSize = 0;
-            this.ButtonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonFind.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ButtonFind.Location = new System.Drawing.Point(12, 97);
-            this.ButtonFind.Name = "ButtonFind";
-            this.ButtonFind.Size = new System.Drawing.Size(75, 23);
-            this.ButtonFind.TabIndex = 2;
-            this.ButtonFind.Text = "Find";
-            this.ButtonFind.UseVisualStyleBackColor = false;
-            this.ButtonFind.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // AnswerBox
-            // 
-            this.AnswerBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AnswerBox.Enabled = false;
-            this.AnswerBox.Location = new System.Drawing.Point(12, 126);
-            this.AnswerBox.Multiline = true;
-            this.AnswerBox.Name = "AnswerBox";
-            this.AnswerBox.Size = new System.Drawing.Size(196, 110);
-            this.AnswerBox.TabIndex = 1;
             // 
             // panel2
             // 
@@ -140,15 +125,64 @@
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
-            // ProductButton
+            // CategoryButton
             // 
-            this.ProductButton.Location = new System.Drawing.Point(458, 96);
-            this.ProductButton.Name = "ProductButton";
-            this.ProductButton.Size = new System.Drawing.Size(75, 23);
-            this.ProductButton.TabIndex = 5;
-            this.ProductButton.Text = "Product";
-            this.ProductButton.UseVisualStyleBackColor = true;
-            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
+            this.CategoryButton.Location = new System.Drawing.Point(458, 128);
+            this.CategoryButton.Name = "CategoryButton";
+            this.CategoryButton.Size = new System.Drawing.Size(75, 23);
+            this.CategoryButton.TabIndex = 6;
+            this.CategoryButton.Text = "Category";
+            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Date";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DateLabel.Location = new System.Drawing.Point(54, 71);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(81, 19);
+            this.DateLabel.TabIndex = 8;
+            this.DateLabel.Text = "01.01.2000";
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.InfoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.InfoLabel.Location = new System.Drawing.Point(6, 100);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(42, 19);
+            this.InfoLabel.TabIndex = 9;
+            this.InfoLabel.Text = "Rate";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 157);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(523, 248);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(10, 130);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -164,6 +198,7 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,10 +209,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label CloseLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TextBoxFind;
-        private System.Windows.Forms.Button ButtonFind;
-        private System.Windows.Forms.TextBox AnswerBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ProductButton;
+        private System.Windows.Forms.Button CategoryButton;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label InfoLabel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

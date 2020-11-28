@@ -32,3 +32,4 @@ E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.StorageProduct.resource
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.StorageForm.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.Task.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.ProductForm.resources
+E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.CategoryForm.resources
