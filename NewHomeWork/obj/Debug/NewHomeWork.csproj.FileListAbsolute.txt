@@ -31,3 +31,4 @@ E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.exe.config
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.StorageProduct.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.StorageForm.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.Task.resources
+E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.ProductForm.resources

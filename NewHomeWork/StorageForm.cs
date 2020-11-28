@@ -75,6 +75,8 @@ namespace NewHomeWork
                     ListStorage.Items.Add(reader["name"]);
                 }
             }
+            TextBoxName.Clear();
+            TextBoxAddress.Clear();
             
         }
 
@@ -175,7 +177,7 @@ namespace NewHomeWork
                 DefaultStat();
                 UpdateBox();
                 MessageBox.Show("Added", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                EditButton.Enabled = false;
+                
             }
             else if (TextBoxAddress.Text != "" && TextBoxName.Text != "" && ActionLabel.Text == "Edit")
             {

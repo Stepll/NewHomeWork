@@ -98,5 +98,11 @@ namespace NewHomeWork
             StorageForm frm2 = new StorageForm(); 
             frm2.Show();
         }
+
+        private void ProductButton_Click(object sender, EventArgs e)
+        {
+            ProductForm frm2 = new ProductForm();
+            frm2.Show();
+        }
     }
 }

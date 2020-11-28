@@ -155,7 +155,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.AddButton);
             this.panel1.Controls.Add(this.EditButton);
             this.panel1.Controls.Add(this.DeleteButton);

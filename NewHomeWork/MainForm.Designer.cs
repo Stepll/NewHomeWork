@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.TextBoxFind = new System.Windows.Forms.TextBox();
+            this.ButtonFind = new System.Windows.Forms.Button();
+            this.AnswerBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.AnswerBox = new System.Windows.Forms.TextBox();
-            this.ButtonFind = new System.Windows.Forms.Button();
-            this.TextBoxFind = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ProductButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.DimGray;
+            this.MainPanel.Controls.Add(this.ProductButton);
             this.MainPanel.Controls.Add(this.button1);
             this.MainPanel.Controls.Add(this.TextBoxFind);
             this.MainPanel.Controls.Add(this.ButtonFind);
@@ -55,6 +57,48 @@
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(458, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Storage";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // TextBoxFind
+            // 
+            this.TextBoxFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxFind.Location = new System.Drawing.Point(12, 71);
+            this.TextBoxFind.Name = "TextBoxFind";
+            this.TextBoxFind.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxFind.TabIndex = 3;
+            // 
+            // ButtonFind
+            // 
+            this.ButtonFind.BackColor = System.Drawing.Color.DarkGray;
+            this.ButtonFind.FlatAppearance.BorderSize = 0;
+            this.ButtonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonFind.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ButtonFind.Location = new System.Drawing.Point(12, 97);
+            this.ButtonFind.Name = "ButtonFind";
+            this.ButtonFind.Size = new System.Drawing.Size(75, 23);
+            this.ButtonFind.TabIndex = 2;
+            this.ButtonFind.Text = "Find";
+            this.ButtonFind.UseVisualStyleBackColor = false;
+            this.ButtonFind.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // AnswerBox
+            // 
+            this.AnswerBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AnswerBox.Enabled = false;
+            this.AnswerBox.Location = new System.Drawing.Point(12, 126);
+            this.AnswerBox.Multiline = true;
+            this.AnswerBox.Name = "AnswerBox";
+            this.AnswerBox.Size = new System.Drawing.Size(196, 110);
+            this.AnswerBox.TabIndex = 1;
             // 
             // panel2
             // 
@@ -96,47 +140,15 @@
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
-            // AnswerBox
+            // ProductButton
             // 
-            this.AnswerBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AnswerBox.Enabled = false;
-            this.AnswerBox.Location = new System.Drawing.Point(12, 126);
-            this.AnswerBox.Multiline = true;
-            this.AnswerBox.Name = "AnswerBox";
-            this.AnswerBox.Size = new System.Drawing.Size(196, 110);
-            this.AnswerBox.TabIndex = 1;
-            // 
-            // ButtonFind
-            // 
-            this.ButtonFind.BackColor = System.Drawing.Color.DarkGray;
-            this.ButtonFind.FlatAppearance.BorderSize = 0;
-            this.ButtonFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonFind.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ButtonFind.Location = new System.Drawing.Point(12, 97);
-            this.ButtonFind.Name = "ButtonFind";
-            this.ButtonFind.Size = new System.Drawing.Size(75, 23);
-            this.ButtonFind.TabIndex = 2;
-            this.ButtonFind.Text = "Find";
-            this.ButtonFind.UseVisualStyleBackColor = false;
-            this.ButtonFind.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // TextBoxFind
-            // 
-            this.TextBoxFind.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxFind.Location = new System.Drawing.Point(12, 71);
-            this.TextBoxFind.Name = "TextBoxFind";
-            this.TextBoxFind.Size = new System.Drawing.Size(100, 20);
-            this.TextBoxFind.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(458, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Storage";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.ProductButton.Location = new System.Drawing.Point(458, 96);
+            this.ProductButton.Name = "ProductButton";
+            this.ProductButton.Size = new System.Drawing.Size(75, 23);
+            this.ProductButton.TabIndex = 5;
+            this.ProductButton.Text = "Product";
+            this.ProductButton.UseVisualStyleBackColor = true;
+            this.ProductButton.Click += new System.EventHandler(this.ProductButton_Click);
             // 
             // MainForm
             // 
@@ -166,5 +178,6 @@
         private System.Windows.Forms.Button ButtonFind;
         private System.Windows.Forms.TextBox AnswerBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ProductButton;
     }
 }
