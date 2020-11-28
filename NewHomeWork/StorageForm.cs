@@ -211,5 +211,10 @@ namespace NewHomeWork
             Task frm2 = new Task();
             frm2.Show();
         }
+
+        private void ViewButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

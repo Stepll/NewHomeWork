@@ -62,6 +62,24 @@ namespace NewHomeWork
             MoveClass.DownCommand(e, ref lastPoint);
         }
 
+        void UpdatePriceBD(double oldRate, double newRate, int code)
+        {
+            SQLiteCommand ratenow = StorageNameClass.Conn.CreateCommand();
+            ratenow.CommandText = $"SELECT id, price_main FROM Product";
+            SQLiteDataReader reader2 = ratenow.ExecuteReader();
+            if (reader2.HasRows)
+            {
+
+                while (reader2.Read())
+                {
+                    double newPrice = Convert.ToDouble(reader2["price_main"]) * oldRate / newRate;
+                    SQLiteCommand UpdateCommand = StorageNameClass.Conn.CreateCommand();
+                    UpdateCommand.CommandText = $"UPDATE Product SET price_main = '{newPrice}' WHERE id={reader2["id"]} AND id_currency={code};";
+                    UpdateCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             DateTime date = DateTime.Today;
@@ -124,13 +142,16 @@ namespace NewHomeWork
                     SQLiteCommand Add2 = StorageNameClass.Conn.CreateCommand();
                     Add2.CommandText = $"UPDATE Currency SET rate = '{UAN}' WHERE code='UAN';";
                     Add2.ExecuteNonQuery();
+                    UpdatePriceBD(cUAN, UAN, 1);
                     cUAN = UAN;
 
                     // EUR
                     SQLiteCommand Add3 = StorageNameClass.Conn.CreateCommand();
                     Add3.CommandText = $"UPDATE Currency SET rate = '{EUR}' WHERE code='EUR';";
                     Add3.ExecuteNonQuery();
+                    UpdatePriceBD(cEUR, EUR, 3);
                     cEUR = EUR;
+                    dateDB = date;
                 }
             }
             InfoLabel.Text = $"UAN: {Math.Round(cUAN, 5).ToString()}    EUR: {Math.Round(cEUR, 5).ToString()}    update: {dateDB.ToShortDateString()}";
@@ -164,6 +185,85 @@ namespace NewHomeWork
         {
             CategoryForm frm2 = new CategoryForm();
             frm2.Show();
+        }
+
+        private void TableList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataGrid.Columns.Clear();
+            if (TableList.SelectedItem == "Product")
+            {
+                SQLiteCommand comm = new SQLiteCommand("Select P.name, P.price_main, P.price_real, Ct.name, C.name, P.code From (Product P JOIN Category Ct ON P.id_category=Ct.id) JOIN Currency C ON P.id_currency=C.id", StorageNameClass.Conn);
+                DataGrid.Columns.Add("column-2", "name");
+                DataGrid.Columns.Add("column-3", "price_main");
+                DataGrid.Columns.Add("column-4", "price_dolar");
+                DataGrid.Columns.Add("column-5", "category");
+                DataGrid.Columns.Add("column-6", "currency");
+                DataGrid.Columns.Add("column-7", "code");
+                using (SQLiteDataReader read = comm.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        DataGrid.Rows.Add(new object[] {
+                    read.GetValue(0),
+                    read.GetValue(1),
+                    read.GetValue(2),
+                    read.GetValue(3),
+                    read.GetValue(4),
+                    read.GetValue(5),
+                    });
+                    }
+                }
+            }
+            if (TableList.SelectedItem == "Storage")
+            {
+                SQLiteCommand comm = new SQLiteCommand("Select * From Storage", StorageNameClass.Conn);
+                DataGrid.Columns.Add("column-2", "name");
+                DataGrid.Columns.Add("column-3", "address");
+                using (SQLiteDataReader read = comm.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        DataGrid.Rows.Add(new object[] {
+                    read.GetValue(1),
+                    read.GetValue(2)
+                    });
+                    }
+                }
+            }
+            if (TableList.SelectedItem == "Category")
+            {
+                SQLiteCommand comm = new SQLiteCommand("Select * From Category", StorageNameClass.Conn);
+                DataGrid.Columns.Add("column-2", "name");
+                using (SQLiteDataReader read = comm.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        DataGrid.Rows.Add(new object[] {
+                    read.GetValue(1)
+                    });
+                    }
+                }
+            }
+            if (TableList.SelectedItem == "Currency")
+            {
+                SQLiteCommand comm = new SQLiteCommand("Select * From Currency ", StorageNameClass.Conn);
+                DataGrid.Columns.Add("column-2", "name");
+                DataGrid.Columns.Add("column-3", "code");
+                DataGrid.Columns.Add("column-4", "rate");
+                DataGrid.Columns.Add("column-5", "uptodate");
+                using (SQLiteDataReader read = comm.ExecuteReader())
+                {
+                    while (read.Read())
+                    {
+                        DataGrid.Rows.Add(new object[] {
+                    read.GetValue(1),
+                    read.GetValue(2),
+                    read.GetValue(3),
+                    read.GetValue(4),
+                    });
+                    }
+                }
+            }
         }
     }
 }

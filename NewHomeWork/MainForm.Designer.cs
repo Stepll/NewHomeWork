@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.TableList = new System.Windows.Forms.ComboBox();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.InfoLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CategoryButton = new System.Windows.Forms.Button();
             this.ProductButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CloseLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.CategoryButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DateLabel = new System.Windows.Forms.Label();
-            this.InfoLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.MainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.DimGray;
-            this.MainPanel.Controls.Add(this.comboBox1);
-            this.MainPanel.Controls.Add(this.dataGridView1);
+            this.MainPanel.Controls.Add(this.TableList);
+            this.MainPanel.Controls.Add(this.DataGrid);
             this.MainPanel.Controls.Add(this.InfoLabel);
             this.MainPanel.Controls.Add(this.DateLabel);
             this.MainPanel.Controls.Add(this.label2);
@@ -64,6 +64,75 @@
             this.MainPanel.TabIndex = 0;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
+            // 
+            // TableList
+            // 
+            this.TableList.FormattingEnabled = true;
+            this.TableList.Items.AddRange(new object[] {
+            "Product",
+            "Storage",
+            "Category",
+            "Currency"});
+            this.TableList.Location = new System.Drawing.Point(10, 130);
+            this.TableList.Name = "TableList";
+            this.TableList.Size = new System.Drawing.Size(121, 21);
+            this.TableList.TabIndex = 11;
+            this.TableList.Text = "Product";
+            this.TableList.SelectedIndexChanged += new System.EventHandler(this.TableList_SelectedIndexChanged);
+            // 
+            // DataGrid
+            // 
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.Location = new System.Drawing.Point(10, 157);
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.RowTemplate.Height = 21;
+            this.DataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DataGrid.Size = new System.Drawing.Size(523, 248);
+            this.DataGrid.TabIndex = 10;
+            // 
+            // InfoLabel
+            // 
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.InfoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.InfoLabel.Location = new System.Drawing.Point(6, 100);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(42, 19);
+            this.InfoLabel.TabIndex = 9;
+            this.InfoLabel.Text = "Rate";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DateLabel.Location = new System.Drawing.Point(54, 71);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(81, 19);
+            this.DateLabel.TabIndex = 8;
+            this.DateLabel.Text = "01.01.2000";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(6, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Date";
+            // 
+            // CategoryButton
+            // 
+            this.CategoryButton.Location = new System.Drawing.Point(458, 128);
+            this.CategoryButton.Name = "CategoryButton";
+            this.CategoryButton.Size = new System.Drawing.Size(75, 23);
+            this.CategoryButton.TabIndex = 6;
+            this.CategoryButton.Text = "Category";
+            this.CategoryButton.UseVisualStyleBackColor = true;
+            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
             // 
             // ProductButton
             // 
@@ -125,65 +194,6 @@
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
             // 
-            // CategoryButton
-            // 
-            this.CategoryButton.Location = new System.Drawing.Point(458, 128);
-            this.CategoryButton.Name = "CategoryButton";
-            this.CategoryButton.Size = new System.Drawing.Size(75, 23);
-            this.CategoryButton.TabIndex = 6;
-            this.CategoryButton.Text = "Category";
-            this.CategoryButton.UseVisualStyleBackColor = true;
-            this.CategoryButton.Click += new System.EventHandler(this.CategoryButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(6, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Date";
-            // 
-            // DateLabel
-            // 
-            this.DateLabel.AutoSize = true;
-            this.DateLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DateLabel.Location = new System.Drawing.Point(54, 71);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(81, 19);
-            this.DateLabel.TabIndex = 8;
-            this.DateLabel.Text = "01.01.2000";
-            // 
-            // InfoLabel
-            // 
-            this.InfoLabel.AutoSize = true;
-            this.InfoLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.InfoLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.InfoLabel.Location = new System.Drawing.Point(6, 100);
-            this.InfoLabel.Name = "InfoLabel";
-            this.InfoLabel.Size = new System.Drawing.Size(42, 19);
-            this.InfoLabel.TabIndex = 9;
-            this.InfoLabel.Text = "Rate";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(523, 248);
-            this.dataGridView1.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,8 +207,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,7 +225,7 @@
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label InfoLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox TableList;
+        private System.Windows.Forms.DataGridView DataGrid;
     }
 }

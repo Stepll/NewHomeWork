@@ -45,6 +45,7 @@
             this.TopPanel = new System.Windows.Forms.Panel();
             this.StorageLabel = new System.Windows.Forms.Label();
             this.ButtonEnd = new System.Windows.Forms.Button();
+            this.ViewButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.TopPanel.SuspendLayout();
@@ -53,6 +54,7 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.Gray;
+            this.MainPanel.Controls.Add(this.ViewButton);
             this.MainPanel.Controls.Add(this.AddButton2);
             this.MainPanel.Controls.Add(this.TaskButton);
             this.MainPanel.Controls.Add(this.ProductButton);
@@ -75,7 +77,7 @@
             // AddButton2
             // 
             this.AddButton2.Enabled = false;
-            this.AddButton2.Location = new System.Drawing.Point(318, 151);
+            this.AddButton2.Location = new System.Drawing.Point(318, 152);
             this.AddButton2.Name = "AddButton2";
             this.AddButton2.Size = new System.Drawing.Size(75, 23);
             this.AddButton2.TabIndex = 10;
@@ -241,13 +243,24 @@
             // 
             // ButtonEnd
             // 
-            this.ButtonEnd.Location = new System.Drawing.Point(318, 180);
+            this.ButtonEnd.Location = new System.Drawing.Point(318, 181);
             this.ButtonEnd.Name = "ButtonEnd";
             this.ButtonEnd.Size = new System.Drawing.Size(75, 23);
             this.ButtonEnd.TabIndex = 0;
             this.ButtonEnd.Text = "OK";
             this.ButtonEnd.UseVisualStyleBackColor = true;
             this.ButtonEnd.Click += new System.EventHandler(this.ButtonEnd_Click);
+            // 
+            // ViewButton
+            // 
+            this.ViewButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewButton.Location = new System.Drawing.Point(296, 60);
+            this.ViewButton.Name = "ViewButton";
+            this.ViewButton.Size = new System.Drawing.Size(97, 23);
+            this.ViewButton.TabIndex = 11;
+            this.ViewButton.Text = "View Storage";
+            this.ViewButton.UseVisualStyleBackColor = true;
+            this.ViewButton.Click += new System.EventHandler(this.ViewButton_Click);
             // 
             // StorageForm
             // 
@@ -286,5 +299,6 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button ViewButton;
     }
 }

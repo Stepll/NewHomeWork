@@ -29,27 +29,28 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.EndButton = new System.Windows.Forms.Button();
-            this.NameFormLabel = new System.Windows.Forms.Label();
-            this.ActionLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ProductList = new System.Windows.Forms.ComboBox();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.PriceBox = new System.Windows.Forms.TextBox();
-            this.CategoryList = new System.Windows.Forms.ComboBox();
-            this.CurrencyList = new System.Windows.Forms.ComboBox();
-            this.AddEditButton = new System.Windows.Forms.Button();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AddEditButton = new System.Windows.Forms.Button();
+            this.CurrencyList = new System.Windows.Forms.ComboBox();
+            this.CategoryList = new System.Windows.Forms.ComboBox();
+            this.PriceBox = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ActionLabel = new System.Windows.Forms.Label();
+            this.EndButton = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.ProductList = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.NameFormLabel = new System.Windows.Forms.Label();
+            this.CodeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,19 +77,115 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
-            // panel2
+            // label4
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.NameFormLabel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(412, 57);
-            this.panel2.TabIndex = 0;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(140, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 19);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Currency";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(141, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Price";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(140, 125);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 19);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Category";
+            // 
+            // AddEditButton
+            // 
+            this.AddEditButton.Location = new System.Drawing.Point(323, 181);
+            this.AddEditButton.Name = "AddEditButton";
+            this.AddEditButton.Size = new System.Drawing.Size(75, 23);
+            this.AddEditButton.TabIndex = 12;
+            this.AddEditButton.Text = "Add/Edit";
+            this.AddEditButton.UseVisualStyleBackColor = true;
+            this.AddEditButton.Click += new System.EventHandler(this.AddEditButton_Click);
+            // 
+            // CurrencyList
+            // 
+            this.CurrencyList.FormattingEnabled = true;
+            this.CurrencyList.Location = new System.Drawing.Point(217, 181);
+            this.CurrencyList.Name = "CurrencyList";
+            this.CurrencyList.Size = new System.Drawing.Size(100, 21);
+            this.CurrencyList.TabIndex = 11;
+            // 
+            // CategoryList
+            // 
+            this.CategoryList.FormattingEnabled = true;
+            this.CategoryList.Location = new System.Drawing.Point(217, 126);
+            this.CategoryList.Name = "CategoryList";
+            this.CategoryList.Size = new System.Drawing.Size(100, 21);
+            this.CategoryList.TabIndex = 10;
+            // 
+            // PriceBox
+            // 
+            this.PriceBox.Location = new System.Drawing.Point(217, 154);
+            this.PriceBox.Name = "PriceBox";
+            this.PriceBox.Size = new System.Drawing.Size(100, 20);
+            this.PriceBox.TabIndex = 9;
+            // 
+            // NameBox
+            // 
+            this.NameBox.Location = new System.Drawing.Point(217, 97);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(100, 20);
+            this.NameBox.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(141, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Name";
+            // 
+            // ActionLabel
+            // 
+            this.ActionLabel.AutoSize = true;
+            this.ActionLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ActionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ActionLabel.Location = new System.Drawing.Point(141, 64);
+            this.ActionLabel.Name = "ActionLabel";
+            this.ActionLabel.Size = new System.Drawing.Size(75, 22);
+            this.ActionLabel.TabIndex = 3;
+            this.ActionLabel.Text = "Nothing";
+            // 
+            // EndButton
+            // 
+            this.EndButton.Location = new System.Drawing.Point(323, 210);
+            this.EndButton.Name = "EndButton";
+            this.EndButton.Size = new System.Drawing.Size(75, 23);
+            this.EndButton.TabIndex = 2;
+            this.EndButton.Text = "OK";
+            this.EndButton.UseVisualStyleBackColor = true;
+            this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.CodeButton);
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.EditButton);
             this.panel3.Controls.Add(this.DeleteButton);
@@ -101,15 +198,53 @@
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             // 
-            // EndButton
+            // AddButton
             // 
-            this.EndButton.Location = new System.Drawing.Point(323, 210);
-            this.EndButton.Name = "EndButton";
-            this.EndButton.Size = new System.Drawing.Size(75, 23);
-            this.EndButton.TabIndex = 2;
-            this.EndButton.Text = "OK";
-            this.EndButton.UseVisualStyleBackColor = true;
-            this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
+            this.AddButton.Location = new System.Drawing.Point(12, 95);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Location = new System.Drawing.Point(12, 124);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(75, 23);
+            this.EditButton.TabIndex = 2;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(12, 153);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.TabIndex = 1;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // ProductList
+            // 
+            this.ProductList.FormattingEnabled = true;
+            this.ProductList.Location = new System.Drawing.Point(13, 7);
+            this.ProductList.Name = "ProductList";
+            this.ProductList.Size = new System.Drawing.Size(104, 21);
+            this.ProductList.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.NameFormLabel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(412, 57);
+            this.panel2.TabIndex = 0;
             // 
             // NameFormLabel
             // 
@@ -126,138 +261,14 @@
             this.NameFormLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseDown);
             this.NameFormLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseMove);
             // 
-            // ActionLabel
+            // CodeButton
             // 
-            this.ActionLabel.AutoSize = true;
-            this.ActionLabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ActionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ActionLabel.Location = new System.Drawing.Point(141, 64);
-            this.ActionLabel.Name = "ActionLabel";
-            this.ActionLabel.Size = new System.Drawing.Size(75, 22);
-            this.ActionLabel.TabIndex = 3;
-            this.ActionLabel.Text = "Nothing";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(141, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Name";
-            // 
-            // ProductList
-            // 
-            this.ProductList.FormattingEnabled = true;
-            this.ProductList.Location = new System.Drawing.Point(13, 7);
-            this.ProductList.Name = "ProductList";
-            this.ProductList.Size = new System.Drawing.Size(104, 21);
-            this.ProductList.TabIndex = 0;
-            // 
-            // NameBox
-            // 
-            this.NameBox.Location = new System.Drawing.Point(217, 97);
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(100, 20);
-            this.NameBox.TabIndex = 8;
-            // 
-            // PriceBox
-            // 
-            this.PriceBox.Location = new System.Drawing.Point(217, 154);
-            this.PriceBox.Name = "PriceBox";
-            this.PriceBox.Size = new System.Drawing.Size(100, 20);
-            this.PriceBox.TabIndex = 9;
-            // 
-            // CategoryList
-            // 
-            this.CategoryList.FormattingEnabled = true;
-            this.CategoryList.Location = new System.Drawing.Point(217, 126);
-            this.CategoryList.Name = "CategoryList";
-            this.CategoryList.Size = new System.Drawing.Size(100, 21);
-            this.CategoryList.TabIndex = 10;
-            // 
-            // CurrencyList
-            // 
-            this.CurrencyList.FormattingEnabled = true;
-            this.CurrencyList.Location = new System.Drawing.Point(217, 181);
-            this.CurrencyList.Name = "CurrencyList";
-            this.CurrencyList.Size = new System.Drawing.Size(100, 21);
-            this.CurrencyList.TabIndex = 11;
-            // 
-            // AddEditButton
-            // 
-            this.AddEditButton.Location = new System.Drawing.Point(323, 181);
-            this.AddEditButton.Name = "AddEditButton";
-            this.AddEditButton.Size = new System.Drawing.Size(75, 23);
-            this.AddEditButton.TabIndex = 12;
-            this.AddEditButton.Text = "Add/Edit";
-            this.AddEditButton.UseVisualStyleBackColor = true;
-            this.AddEditButton.Click += new System.EventHandler(this.AddEditButton_Click);
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Location = new System.Drawing.Point(12, 153);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.DeleteButton.TabIndex = 1;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
-            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Location = new System.Drawing.Point(12, 124);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(75, 23);
-            this.EditButton.TabIndex = 2;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(12, 95);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
-            this.AddButton.TabIndex = 3;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(140, 125);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 19);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Category";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(141, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 19);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Price";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(140, 181);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 19);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Currency";
+            this.CodeButton.Location = new System.Drawing.Point(12, 64);
+            this.CodeButton.Name = "CodeButton";
+            this.CodeButton.Size = new System.Drawing.Size(75, 23);
+            this.CodeButton.TabIndex = 4;
+            this.CodeButton.Text = "Code";
+            this.CodeButton.UseVisualStyleBackColor = true;
             // 
             // ProductForm
             // 
@@ -271,8 +282,8 @@
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -298,5 +309,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CodeButton;
     }
 }
