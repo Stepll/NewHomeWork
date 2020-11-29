@@ -85,7 +85,7 @@ namespace NewHomeWork
             
             
             UpdateBox();
-            ListStorage.SelectedIndex = 1;
+            ListStorage.SelectedIndex = 0;
             StorageNameClass.StorageName = ListStorage.SelectedItem.ToString();
         }
 

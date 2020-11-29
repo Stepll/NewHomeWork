@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.TableList = new System.Windows.Forms.ComboBox();
             this.DataGrid = new System.Windows.Forms.DataGridView();
@@ -67,25 +71,63 @@
             // 
             // TableList
             // 
+            this.TableList.BackColor = System.Drawing.Color.Silver;
+            this.TableList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TableList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TableList.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TableList.ForeColor = System.Drawing.Color.Black;
             this.TableList.FormattingEnabled = true;
             this.TableList.Items.AddRange(new object[] {
             "Product",
             "Storage",
             "Category",
             "Currency"});
-            this.TableList.Location = new System.Drawing.Point(10, 130);
+            this.TableList.Location = new System.Drawing.Point(10, 129);
             this.TableList.Name = "TableList";
-            this.TableList.Size = new System.Drawing.Size(121, 21);
+            this.TableList.Size = new System.Drawing.Size(121, 22);
             this.TableList.TabIndex = 11;
-            this.TableList.Text = "Product";
             this.TableList.SelectedIndexChanged += new System.EventHandler(this.TableList_SelectedIndexChanged);
             // 
             // DataGrid
             // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkGray;
+            this.DataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.DataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.DataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGrid.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DataGrid.GridColor = System.Drawing.Color.DarkGray;
             this.DataGrid.Location = new System.Drawing.Point(10, 157);
             this.DataGrid.Name = "DataGrid";
+            this.DataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.DarkGray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.DataGrid.RowHeadersVisible = false;
+            this.DataGrid.RowHeadersWidth = 10;
             this.DataGrid.RowTemplate.Height = 21;
             this.DataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataGrid.Size = new System.Drawing.Size(523, 248);
@@ -126,6 +168,9 @@
             // 
             // CategoryButton
             // 
+            this.CategoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoryButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CategoryButton.ForeColor = System.Drawing.Color.White;
             this.CategoryButton.Location = new System.Drawing.Point(458, 128);
             this.CategoryButton.Name = "CategoryButton";
             this.CategoryButton.Size = new System.Drawing.Size(75, 23);
@@ -136,6 +181,9 @@
             // 
             // ProductButton
             // 
+            this.ProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProductButton.ForeColor = System.Drawing.Color.White;
             this.ProductButton.Location = new System.Drawing.Point(458, 99);
             this.ProductButton.Name = "ProductButton";
             this.ProductButton.Size = new System.Drawing.Size(75, 23);
@@ -146,6 +194,9 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(458, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Pic = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,11 +48,10 @@
             this.ProductList = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NameFormLabel = new System.Windows.Forms.Label();
-            this.Pic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +78,16 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // Pic
+            // 
+            this.Pic.BackColor = System.Drawing.Color.White;
+            this.Pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pic.Location = new System.Drawing.Point(323, 96);
+            this.Pic.Name = "Pic";
+            this.Pic.Size = new System.Drawing.Size(100, 108);
+            this.Pic.TabIndex = 16;
+            this.Pic.TabStop = false;
             // 
             // label4
             // 
@@ -114,6 +124,9 @@
             // 
             // AddEditButton
             // 
+            this.AddEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEditButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddEditButton.ForeColor = System.Drawing.Color.White;
             this.AddEditButton.Location = new System.Drawing.Point(242, 210);
             this.AddEditButton.Name = "AddEditButton";
             this.AddEditButton.Size = new System.Drawing.Size(75, 23);
@@ -124,22 +137,34 @@
             // 
             // CurrencyList
             // 
+            this.CurrencyList.BackColor = System.Drawing.Color.Silver;
+            this.CurrencyList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CurrencyList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CurrencyList.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CurrencyList.FormattingEnabled = true;
             this.CurrencyList.Location = new System.Drawing.Point(217, 181);
             this.CurrencyList.Name = "CurrencyList";
-            this.CurrencyList.Size = new System.Drawing.Size(100, 21);
+            this.CurrencyList.Size = new System.Drawing.Size(100, 22);
             this.CurrencyList.TabIndex = 11;
+            this.CurrencyList.SelectedIndexChanged += new System.EventHandler(this.CurrencyList_SelectedIndexChanged);
             // 
             // CategoryList
             // 
+            this.CategoryList.BackColor = System.Drawing.Color.Silver;
+            this.CategoryList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoryList.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CategoryList.FormattingEnabled = true;
             this.CategoryList.Location = new System.Drawing.Point(217, 126);
             this.CategoryList.Name = "CategoryList";
-            this.CategoryList.Size = new System.Drawing.Size(100, 21);
+            this.CategoryList.Size = new System.Drawing.Size(100, 22);
             this.CategoryList.TabIndex = 10;
             // 
             // PriceBox
             // 
+            this.PriceBox.BackColor = System.Drawing.Color.Silver;
+            this.PriceBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PriceBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PriceBox.Location = new System.Drawing.Point(217, 154);
             this.PriceBox.Name = "PriceBox";
             this.PriceBox.Size = new System.Drawing.Size(100, 20);
@@ -147,6 +172,9 @@
             // 
             // NameBox
             // 
+            this.NameBox.BackColor = System.Drawing.Color.Silver;
+            this.NameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameBox.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameBox.Location = new System.Drawing.Point(217, 97);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(100, 20);
@@ -176,6 +204,9 @@
             // 
             // EndButton
             // 
+            this.EndButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EndButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EndButton.ForeColor = System.Drawing.Color.White;
             this.EndButton.Location = new System.Drawing.Point(348, 211);
             this.EndButton.Name = "EndButton";
             this.EndButton.Size = new System.Drawing.Size(75, 23);
@@ -201,6 +232,9 @@
             // 
             // AddButton
             // 
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(12, 95);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
@@ -211,6 +245,9 @@
             // 
             // EditButton
             // 
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditButton.ForeColor = System.Drawing.Color.White;
             this.EditButton.Location = new System.Drawing.Point(12, 124);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
@@ -221,6 +258,9 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(12, 153);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
@@ -231,10 +271,14 @@
             // 
             // ProductList
             // 
+            this.ProductList.BackColor = System.Drawing.Color.Silver;
+            this.ProductList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductList.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ProductList.FormattingEnabled = true;
             this.ProductList.Location = new System.Drawing.Point(13, 7);
             this.ProductList.Name = "ProductList";
-            this.ProductList.Size = new System.Drawing.Size(104, 21);
+            this.ProductList.Size = new System.Drawing.Size(104, 22);
             this.ProductList.TabIndex = 0;
             this.ProductList.SelectedIndexChanged += new System.EventHandler(this.ProductList_SelectedIndexChanged);
             // 
@@ -263,16 +307,6 @@
             this.NameFormLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseDown);
             this.NameFormLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseMove);
             // 
-            // Pic
-            // 
-            this.Pic.BackColor = System.Drawing.Color.White;
-            this.Pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pic.Location = new System.Drawing.Point(323, 96);
-            this.Pic.Name = "Pic";
-            this.Pic.Size = new System.Drawing.Size(100, 108);
-            this.Pic.TabIndex = 16;
-            this.Pic.TabStop = false;
-            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,9 +319,9 @@
             this.Load += new System.EventHandler(this.ProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.ResumeLayout(false);
 
         }

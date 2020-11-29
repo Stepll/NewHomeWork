@@ -75,6 +75,9 @@
             // AddButton2
             // 
             this.AddButton2.Enabled = false;
+            this.AddButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton2.ForeColor = System.Drawing.Color.White;
             this.AddButton2.Location = new System.Drawing.Point(318, 152);
             this.AddButton2.Name = "AddButton2";
             this.AddButton2.Size = new System.Drawing.Size(75, 23);
@@ -85,6 +88,9 @@
             // 
             // TaskButton
             // 
+            this.TaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TaskButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TaskButton.ForeColor = System.Drawing.Color.White;
             this.TaskButton.Location = new System.Drawing.Point(152, 181);
             this.TaskButton.Name = "TaskButton";
             this.TaskButton.Size = new System.Drawing.Size(75, 23);
@@ -96,6 +102,9 @@
             // ProductButton
             // 
             this.ProductButton.Enabled = false;
+            this.ProductButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ProductButton.ForeColor = System.Drawing.Color.White;
             this.ProductButton.Location = new System.Drawing.Point(152, 152);
             this.ProductButton.Name = "ProductButton";
             this.ProductButton.Size = new System.Drawing.Size(75, 23);
@@ -106,7 +115,11 @@
             // 
             // TextBoxAddress
             // 
+            this.TextBoxAddress.BackColor = System.Drawing.Color.Silver;
+            this.TextBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxAddress.Enabled = false;
+            this.TextBoxAddress.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxAddress.ForeColor = System.Drawing.Color.Black;
             this.TextBoxAddress.Location = new System.Drawing.Point(222, 126);
             this.TextBoxAddress.Name = "TextBoxAddress";
             this.TextBoxAddress.Size = new System.Drawing.Size(171, 20);
@@ -114,7 +127,11 @@
             // 
             // TextBoxName
             // 
+            this.TextBoxName.BackColor = System.Drawing.Color.Silver;
+            this.TextBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxName.Enabled = false;
+            this.TextBoxName.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxName.ForeColor = System.Drawing.Color.Black;
             this.TextBoxName.Location = new System.Drawing.Point(222, 94);
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(171, 20);
@@ -170,6 +187,9 @@
             // 
             // AddButton
             // 
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(12, 71);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
@@ -180,6 +200,9 @@
             // 
             // EditButton
             // 
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EditButton.ForeColor = System.Drawing.Color.White;
             this.EditButton.Location = new System.Drawing.Point(12, 100);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(75, 23);
@@ -190,6 +213,9 @@
             // 
             // DeleteButton
             // 
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(12, 129);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
@@ -200,6 +226,10 @@
             // 
             // ListStorage
             // 
+            this.ListStorage.BackColor = System.Drawing.Color.Silver;
+            this.ListStorage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListStorage.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListStorage.FormattingEnabled = true;
             this.ListStorage.Items.AddRange(new object[] {
             "1",
@@ -207,7 +237,7 @@
             "3"});
             this.ListStorage.Location = new System.Drawing.Point(12, 6);
             this.ListStorage.Name = "ListStorage";
-            this.ListStorage.Size = new System.Drawing.Size(121, 21);
+            this.ListStorage.Size = new System.Drawing.Size(121, 22);
             this.ListStorage.TabIndex = 0;
             this.ListStorage.SelectedIndexChanged += new System.EventHandler(this.ListStorage_SelectedIndexChanged);
             // 
@@ -241,6 +271,9 @@
             // 
             // ButtonEnd
             // 
+            this.ButtonEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEnd.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEnd.ForeColor = System.Drawing.Color.White;
             this.ButtonEnd.Location = new System.Drawing.Point(318, 181);
             this.ButtonEnd.Name = "ButtonEnd";
             this.ButtonEnd.Size = new System.Drawing.Size(75, 23);

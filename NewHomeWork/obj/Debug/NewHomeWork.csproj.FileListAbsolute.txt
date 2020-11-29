@@ -33,7 +33,6 @@ E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.StorageForm.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.Task.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.ProductForm.resources
 E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.CategoryForm.resources
-E:\code\C#\NewHomeWork\NewHomeWork\obj\Debug\NewHomeWork.ViewStorage.resources
 E:\code\C#\NewHomeWork\NewHomeWork\bin\Debug\zxing.dll
 E:\code\C#\NewHomeWork\NewHomeWork\bin\Debug\zxing.presentation.dll
 E:\code\C#\NewHomeWork\NewHomeWork\bin\Debug\zxing.xml

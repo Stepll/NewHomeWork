@@ -107,12 +107,6 @@
     <Compile Include="Task.Designer.cs">
       <DependentUpon>Task.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewStorage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewStorage.Designer.cs">
-      <DependentUpon>ViewStorage.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CategoryForm.resx">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,9 +136,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Task.resx">
       <DependentUpon>Task.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewStorage.resx">
-      <DependentUpon>ViewStorage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

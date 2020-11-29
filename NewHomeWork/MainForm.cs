@@ -155,7 +155,29 @@ namespace NewHomeWork
                 }
             }
             InfoLabel.Text = $"UAN: {Math.Round(cUAN, 5).ToString()}    EUR: {Math.Round(cEUR, 5).ToString()}    update: {dateDB.ToShortDateString()}";
-
+            
+            SQLiteCommand comm = new SQLiteCommand("Select P.name, P.price_main, P.price_real, Ct.name, C.name, P.code From (Product P JOIN Category Ct ON P.id_category=Ct.id) JOIN Currency C ON P.id_currency=C.id", StorageNameClass.Conn);
+            DataGrid.Columns.Add("column-2", "name");
+            DataGrid.Columns.Add("column-3", "price_main");
+            DataGrid.Columns.Add("column-4", "price_dolar");
+            DataGrid.Columns.Add("column-5", "category");
+            DataGrid.Columns.Add("column-6", "currency");
+            DataGrid.Columns.Add("column-7", "code");
+            using (SQLiteDataReader read = comm.ExecuteReader())
+            {
+                while (read.Read())
+                {
+                    DataGrid.Rows.Add(new object[] {
+                    read.GetValue(0),
+                    Math.Round(Convert.ToDouble(read.GetValue(1)), 2).ToString(),
+                    Math.Round(Convert.ToDouble(read.GetValue(2)), 2).ToString(),
+                    read.GetValue(3),
+                    read.GetValue(4),
+                    read.GetValue(5),
+                    });
+                }
+            }
+            TableList.SelectedIndex = 0;
 
         }
 
@@ -205,8 +227,8 @@ namespace NewHomeWork
                     {
                         DataGrid.Rows.Add(new object[] {
                     read.GetValue(0),
-                    read.GetValue(1),
-                    read.GetValue(2),
+                    Math.Round(Convert.ToDouble(read.GetValue(1)), 2).ToString(),
+                    Math.Round(Convert.ToDouble(read.GetValue(2)), 2).ToString(),
                     read.GetValue(3),
                     read.GetValue(4),
                     read.GetValue(5),

@@ -14,6 +14,8 @@ namespace NewHomeWork
 {
     public partial class ProductForm : Form
     {
+        string lastIdCurrency = "dolar";
+
         Point lastPoint;
         public ProductForm()
         {
@@ -114,6 +116,7 @@ namespace NewHomeWork
         {
             UpdateBox();
             DefaultStat();
+            CurrencyList.Text = "dolar";
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -129,6 +132,8 @@ namespace NewHomeWork
                 ProductList.Enabled = false;
                 NameBox.Clear();
                 PriceBox.Clear();
+                CurrencyList.Text = "dolar";
+                lastIdCurrency = "dolar";
             }
             else 
             {
@@ -155,6 +160,7 @@ namespace NewHomeWork
                 reader.Read();
                 NameBox.Text = reader["a"].ToString();
                 PriceBox.Text = reader["b"].ToString();
+                lastIdCurrency = reader["d"].ToString();
                 CategoryList.Text = reader["c"].ToString();
                 CurrencyList.Text = reader["d"].ToString();
             }
@@ -305,6 +311,44 @@ namespace NewHomeWork
             readerid.Read();
             string strcode = readerid["code"].ToString();
             Pic.Image = writer.Write(strcode);
+        }
+
+        private void CurrencyList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            double price = 0;
+            double.TryParse(PriceBox.Text, out price);
+            //CurrencyList.SelectedItem - new currency
+            // price * oldcurrency / newcurrency
+            double oldR = 0, newR = 0;
+            if (price != 0)
+            {
+                SQLiteCommand currency = StorageNameClass.Conn.CreateCommand();
+                currency.CommandText = "SELECT name, rate FROM Currency;";
+                SQLiteDataReader reader = currency.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["name"].ToString() == CurrencyList.SelectedItem.ToString())
+                        {
+                            newR = Convert.ToDouble(reader["rate"]);
+                        }
+                        if (reader["name"].ToString() == lastIdCurrency)
+                        {
+                            oldR = Convert.ToDouble(reader["rate"]);
+                        }
+                    }
+                }
+
+
+                PriceBox.Text = (price * oldR / newR).ToString();
+            }
+            else 
+            {
+                PriceBox.Text = "0";
+            }
+            lastIdCurrency = CurrencyList.SelectedItem.ToString();
         }
     }
 }
