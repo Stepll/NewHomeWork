@@ -171,6 +171,19 @@ namespace NewHomeWork
             DialogResult res = MessageBox.Show("Delete?", "QUESTION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (res == DialogResult.Yes)
             {
+                int id = 0;
+                SQLiteCommand getid = StorageNameClass.Conn.CreateCommand();
+                getid.CommandText = $"SELECT id FROM Product WHERE name='{ProductList.SelectedItem}';";
+                SQLiteDataReader reader = getid.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    id = Convert.ToInt32(reader["id"]);
+                }
+
+                SQLiteCommand Delete0 = StorageNameClass.Conn.CreateCommand();
+                Delete0.CommandText = $"DELETE FROM Inter_Product_Storage WHERE id_product={id};";
+                Delete0.ExecuteNonQuery();
 
                 SQLiteCommand Delete = StorageNameClass.Conn.CreateCommand();
                 Delete.CommandText = $"DELETE FROM Product WHERE name='{ProductList.SelectedItem}';";

@@ -125,6 +125,32 @@ namespace NewHomeWork
             DialogResult res = MessageBox.Show("Delete?", "QUESTION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (res == DialogResult.Yes)
             {
+                int id = 0;
+                SQLiteCommand getid = StorageNameClass.Conn.CreateCommand();
+                getid.CommandText = $"SELECT id FROM Category WHERE name='{CategoryList.SelectedItem}';";
+                SQLiteDataReader reader = getid.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    id = Convert.ToInt32(reader["id"]);
+                }
+
+                int newid = 0;
+                SQLiteCommand getnewid = StorageNameClass.Conn.CreateCommand();
+                getnewid.CommandText = $"SELECT id FROM Category;";
+                SQLiteDataReader reader2 = getnewid.ExecuteReader();
+                if (reader2.HasRows)
+                {
+                    reader2.Read();
+                    newid = Convert.ToInt32(reader2["id"]);
+                }
+
+
+
+                SQLiteCommand nullcategory = StorageNameClass.Conn.CreateCommand();
+                nullcategory.CommandText = $"UPDATE Product SET id_category={newid} WHERE id_category={id};";
+                nullcategory.ExecuteNonQuery();
+
 
                 SQLiteCommand Delete = StorageNameClass.Conn.CreateCommand();
                 Delete.CommandText = $"DELETE FROM Category WHERE name='{CategoryList.SelectedItem}';";

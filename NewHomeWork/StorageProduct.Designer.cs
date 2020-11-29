@@ -35,12 +35,15 @@
             this.NumLabel = new System.Windows.Forms.Label();
             this.StorageLabel = new System.Windows.Forms.Label();
             this.ProductList = new System.Windows.Forms.ComboBox();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Brown;
+            this.panel1.Controls.Add(this.DataGrid);
             this.panel1.Controls.Add(this.EditButton);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.TextBoxNum);
@@ -50,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 139);
+            this.panel1.Size = new System.Drawing.Size(301, 312);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -112,11 +115,20 @@
             this.ProductList.TabIndex = 0;
             this.ProductList.SelectedIndexChanged += new System.EventHandler(this.ProductList_SelectedIndexChanged);
             // 
+            // DataGrid
+            // 
+            this.DataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.Location = new System.Drawing.Point(12, 132);
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.Size = new System.Drawing.Size(276, 168);
+            this.DataGrid.TabIndex = 6;
+            // 
             // StorageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 139);
+            this.ClientSize = new System.Drawing.Size(301, 312);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StorageProduct";
@@ -124,6 +136,7 @@
             this.Load += new System.EventHandler(this.StorageProduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +150,6 @@
         private System.Windows.Forms.Label NumLabel;
         private System.Windows.Forms.Label StorageLabel;
         private System.Windows.Forms.ComboBox ProductList;
+        private System.Windows.Forms.DataGridView DataGrid;
     }
 }

@@ -143,7 +143,20 @@ namespace NewHomeWork
             DialogResult res = MessageBox.Show("Delete?", "QUESTION", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (res == DialogResult.Yes)
             {
-                
+                int id = 0;
+                SQLiteCommand getid = StorageNameClass.Conn.CreateCommand();
+                getid.CommandText = $"SELECT id FROM Storage WHERE name='{ListStorage.SelectedItem}';";
+                SQLiteDataReader reader = getid.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    id = Convert.ToInt32(reader["id"]);
+                }
+
+                SQLiteCommand Delete0 = StorageNameClass.Conn.CreateCommand();
+                Delete0.CommandText = $"DELETE FROM Inter_Product_Storage WHERE id_storage={id};";
+                Delete0.ExecuteNonQuery();
+
                 SQLiteCommand Delete = StorageNameClass.Conn.CreateCommand();
                 Delete.CommandText = $"DELETE FROM Storage WHERE name='{ListStorage.SelectedItem}';";
                 Delete.ExecuteNonQuery();
@@ -177,6 +190,7 @@ namespace NewHomeWork
                 DefaultStat();
                 UpdateBox();
                 MessageBox.Show("Added", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListStorage.SelectedIndex = 0;
                 
             }
             else if (TextBoxAddress.Text != "" && TextBoxName.Text != "" && ActionLabel.Text == "Edit")
@@ -210,11 +224,6 @@ namespace NewHomeWork
         {
             Task frm2 = new Task();
             frm2.Show();
-        }
-
-        private void ViewButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
