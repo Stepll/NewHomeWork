@@ -47,15 +47,17 @@
             this.ProductList = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NameFormLabel = new System.Windows.Forms.Label();
-            this.CodeButton = new System.Windows.Forms.Button();
+            this.Pic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.Controls.Add(this.Pic);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -72,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(412, 246);
+            this.panel1.Size = new System.Drawing.Size(438, 246);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -112,7 +114,7 @@
             // 
             // AddEditButton
             // 
-            this.AddEditButton.Location = new System.Drawing.Point(323, 181);
+            this.AddEditButton.Location = new System.Drawing.Point(242, 210);
             this.AddEditButton.Name = "AddEditButton";
             this.AddEditButton.Size = new System.Drawing.Size(75, 23);
             this.AddEditButton.TabIndex = 12;
@@ -174,7 +176,7 @@
             // 
             // EndButton
             // 
-            this.EndButton.Location = new System.Drawing.Point(323, 210);
+            this.EndButton.Location = new System.Drawing.Point(348, 211);
             this.EndButton.Name = "EndButton";
             this.EndButton.Size = new System.Drawing.Size(75, 23);
             this.EndButton.TabIndex = 2;
@@ -185,7 +187,6 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.CodeButton);
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.EditButton);
             this.panel3.Controls.Add(this.DeleteButton);
@@ -235,6 +236,7 @@
             this.ProductList.Name = "ProductList";
             this.ProductList.Size = new System.Drawing.Size(104, 21);
             this.ProductList.TabIndex = 0;
+            this.ProductList.SelectedIndexChanged += new System.EventHandler(this.ProductList_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -243,7 +245,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(412, 57);
+            this.panel2.Size = new System.Drawing.Size(438, 57);
             this.panel2.TabIndex = 0;
             // 
             // NameFormLabel
@@ -254,27 +256,28 @@
             this.NameFormLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NameFormLabel.Location = new System.Drawing.Point(0, 0);
             this.NameFormLabel.Name = "NameFormLabel";
-            this.NameFormLabel.Size = new System.Drawing.Size(412, 57);
+            this.NameFormLabel.Size = new System.Drawing.Size(438, 57);
             this.NameFormLabel.TabIndex = 0;
             this.NameFormLabel.Text = "Product";
             this.NameFormLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NameFormLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseDown);
             this.NameFormLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NameFormLabel_MouseMove);
             // 
-            // CodeButton
+            // Pic
             // 
-            this.CodeButton.Location = new System.Drawing.Point(12, 64);
-            this.CodeButton.Name = "CodeButton";
-            this.CodeButton.Size = new System.Drawing.Size(75, 23);
-            this.CodeButton.TabIndex = 4;
-            this.CodeButton.Text = "Code";
-            this.CodeButton.UseVisualStyleBackColor = true;
+            this.Pic.BackColor = System.Drawing.Color.White;
+            this.Pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pic.Location = new System.Drawing.Point(323, 96);
+            this.Pic.Name = "Pic";
+            this.Pic.Size = new System.Drawing.Size(100, 108);
+            this.Pic.TabIndex = 16;
+            this.Pic.TabStop = false;
             // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 246);
+            this.ClientSize = new System.Drawing.Size(438, 246);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProductForm";
@@ -284,6 +287,7 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -309,6 +313,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button CodeButton;
+        public System.Windows.Forms.PictureBox Pic;
     }
 }

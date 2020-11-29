@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using ZXing;
 
 namespace NewHomeWork
 {
@@ -126,6 +127,8 @@ namespace NewHomeWork
                 CurrencyList.Enabled = true;
                 AddEditButton.Enabled = true;
                 ProductList.Enabled = false;
+                NameBox.Clear();
+                PriceBox.Clear();
             }
             else 
             {
@@ -291,6 +294,17 @@ namespace NewHomeWork
                 MessageBox.Show("NOT NULL", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             DefaultStat();
             UpdateBox();
+        }
+
+        private void ProductList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            BarcodeWriter writer = new BarcodeWriter() { Format = BarcodeFormat.CODE_128 };
+            SQLiteCommand code = StorageNameClass.Conn.CreateCommand();
+            code.CommandText = $"SELECT code FROM Product WHERE name='{ProductList.SelectedItem}';";
+            SQLiteDataReader readerid = code.ExecuteReader();
+            readerid.Read();
+            string strcode = readerid["code"].ToString();
+            Pic.Image = writer.Write(strcode);
         }
     }
 }
